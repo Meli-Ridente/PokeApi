@@ -1,0 +1,21 @@
+body {
+  background-image: url('https://p4.wallpaperbetter.com/wallpaper/450/421/97/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
+  background-size: cover;
+}
+
+.container{
+  display: flex;
+}
+
+.titulo {
+  align-items: center;
+  width: 500px;
+  flex-direction: column;
+}
+
+#buscador{
+  margin-top:20px;
+  border-radius: 15px;
+  height: 20px;
+  width: 200px;
+}
