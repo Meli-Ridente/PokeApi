@@ -4,7 +4,19 @@ body {
 }
 
 .container{
-  display: flex;
+  display: grid;
+  color: white;
+}
+
+ol{
+  margin-top: 40px;
+  display: inline-grid;
+  flex-direction: row;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+li{
+  height: 100px;
 }
 
 .titulo {
