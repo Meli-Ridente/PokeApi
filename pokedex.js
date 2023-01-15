@@ -29,13 +29,33 @@ const final = async () => {
     lista.appendChild(card)
     nombre.setAttribute('class', 'nombre')
     imagen.setAttribute('class', 'imagen-card')
+          
+              /**EVENTOS  */
+
+    let listado = document.createElement('ol')
     div.addEventListener('click' , function(){
-      console.log(div.id)
-      div.innerHTML = 'me cambie'
+      fetch (pokemon.url)
+      .then(datos => datos.json())
+        .then(json => {
+          let valores = json['abilities'];
+          valores.map((valor) => {
+            div.innerHTML = ''
+            let nombreHabilidad = valor['ability'].name.toUpperCase();
+            let habilidades = document.createElement('li')
+            let titulo = document.createElement('h2');
+            titulo.innerText = 'ABILITIES'
+            div.append(titulo)
+
+            listado.append(habilidades)
+            habilidades.append(nombreHabilidad)
+            div.append(listado)
+          })
+        }).catch(error => {
+          console.log(error)
+        })
     })
   })
 }
 
-  
-
+// eventos()
 final()
