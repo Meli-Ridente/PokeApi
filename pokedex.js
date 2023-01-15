@@ -11,10 +11,13 @@ const obtenerDatos = async () => {
 
 const final = async () => {
   const datos = await obtenerDatos()
+  let cont = 0;
   datos.map((pokemon) => {
+    cont ++;
     let card = document.createElement('li')
     let div = document.createElement('div')
-    div.setAttribute('class', 'divCard')
+    div.setAttribute('class', 'divCard',)
+    div.setAttribute('id', `${cont}`)
     let nombre = document.createElement('h3')
     nombre.innerText = pokemon.name.toUpperCase();
     let imagen = document.createElement('img')
@@ -26,8 +29,13 @@ const final = async () => {
     lista.appendChild(card)
     nombre.setAttribute('class', 'nombre')
     imagen.setAttribute('class', 'imagen-card')
+    div.addEventListener('click' , function(){
+      console.log(div.id)
+      div.innerHTML = 'me cambie'
+    })
   })
 }
 
+  
 
 final()
