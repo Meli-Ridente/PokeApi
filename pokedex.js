@@ -1,5 +1,7 @@
 let lista = document.querySelector('ol')
-const url = 'https://pokeapi.co/api/v2/pokemon/' 
+const url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
+const image_url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+const input = document.querySelector('#buscador')
 
 const obtenerDatos = async () => {
   const datos = await fetch(url);
@@ -7,22 +9,42 @@ const obtenerDatos = async () => {
   return datosJson.results;
 }
 
-const mapResults = (results) => {
-  return results.map((valor) => ({
-    name: valor.name
-  }))
-}
-
 const final = async () => {
   const datos = await obtenerDatos()
-  const mapeo = mapResults(datos)
-  for(let i=0; i<mapeo.length; i++){
+  datos.map((pokemon) => {
     let card = document.createElement('li')
-    let nombre = document.createElement('p')
-    nombre.innerText = mapeo[i].name;
-    card.appendChild(nombre)
+    let div = document.createElement('div')
+    div.setAttribute('class', 'divCard')
+    let nombre = document.createElement('h3')
+    nombre.innerText = pokemon.name.toUpperCase();
+    let imagen = document.createElement('img')
+    const prueba = pokemon.url.split('/')
+    imagen.src = image_url + prueba[6] + '.png'
+    card.appendChild(div)
+    div.appendChild(imagen)
+    div.appendChild(nombre)
     lista.appendChild(card)
-  }
+    nombre.setAttribute('class', 'nombre')
+    imagen.setAttribute('class', 'imagen-card')
+  })
 }
+
+  // const pulsor = () => {
+  //   console.log('si')
+  // }
+  // divCard.addEventListener('click' , pulsor)
+
+// const filtrar = async () => {
+//   const datos = await obtenerDatos()
+//   let valor = input.value.toLowerCase()
+//   const encontrado = datos.filter(pokemon => pokemon.name.toLowerCase().includes(valor))
+//     console.log(encontrado)
+//     let pantallaNueva = document.createElement('div')
+//     pantallaNueva.innerText('HOLA')
+//     // pantallaNueva.innerHTML=encontrado;
+//     card.append(pantallaNueva)
+// }
+
+// input.addEventListener('input', filtrar);
 
 final()

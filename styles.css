@@ -1,33 +1,54 @@
 body {
   background-image: url('https://p4.wallpaperbetter.com/wallpaper/450/421/97/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
-  background-size: cover;
+  background-size: 100%;
+  font-family: rubik;
 }
 
 .container{
-  display: grid;
-  color: white;
-}
-
-ol{
-  margin-top: 40px;
-  display: inline-grid;
-  flex-direction: row;
-  grid-template-columns: repeat(3, 1fr);
+  margin-top: 60px;
+  color: hsla(0, 0%, 100%, 0.568);
 }
 
 li{
-  height: 100px;
+  list-style: none;
+  padding: 10px;
 }
 
-.titulo {
+.titulo{
+  justify-content: center;
+  display: flex;
   align-items: center;
-  width: 500px;
   flex-direction: column;
 }
 
 #buscador{
+  display: inline-block;
   margin-top:20px;
   border-radius: 15px;
   height: 20px;
   width: 200px;
+}
+
+
+
+#pokedex{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.divCard{
+  display: flex;
+  background-color: rgba(10, 8, 4, 0.616);
+  /* width: 140px; */
+  border-radius: 30px;
+  height: 200px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imagen-card{
+  height: 180px;
+  width: 200px;
+  padding: 0px;
 }
