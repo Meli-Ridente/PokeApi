@@ -29,8 +29,6 @@ li{
   width: 200px;
 }
 
-
-
 #pokedex{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -39,7 +37,6 @@ li{
 .divCard{
   display: flex;
   background-color: rgba(10, 8, 4, 0.616);
-  /* width: 140px; */
   border-radius: 30px;
   height: 200px;
   flex-direction: column;

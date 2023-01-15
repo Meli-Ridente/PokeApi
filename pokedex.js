@@ -34,8 +34,9 @@ const createPokemons = (listPokemons) => {
         .then(datos => datos.json())
           .then(json => {
             let valores = json['abilities'];
+            console.log(div.innerHTML)
+            div.innerHTML =''
             valores.map((valor) => {
-              div.innerHTML = ''
               let nombreHabilidad = valor['ability'].name.toUpperCase();
               let habilidades = document.createElement('li')
               let titulo = document.createElement('h2');
