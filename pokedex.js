@@ -29,22 +29,5 @@ const final = async () => {
   })
 }
 
-  // const pulsor = () => {
-  //   console.log('si')
-  // }
-  // divCard.addEventListener('click' , pulsor)
-
-// const filtrar = async () => {
-//   const datos = await obtenerDatos()
-//   let valor = input.value.toLowerCase()
-//   const encontrado = datos.filter(pokemon => pokemon.name.toLowerCase().includes(valor))
-//     console.log(encontrado)
-//     let pantallaNueva = document.createElement('div')
-//     pantallaNueva.innerText('HOLA')
-//     // pantallaNueva.innerHTML=encontrado;
-//     card.append(pantallaNueva)
-// }
-
-// input.addEventListener('input', filtrar);
 
 final()
