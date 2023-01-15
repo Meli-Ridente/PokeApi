@@ -1,18 +1,14 @@
-let lista = document.querySelector('ol')
+let $$lista = document.querySelector('ol')
 const url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
 const image_url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-const input = document.querySelector('#buscador')
+const $$input = document.querySelector('#buscador')
+let pokemons = []
 
-const obtenerDatos = async () => {
-  const datos = await fetch(url);
-  const datosJson = await datos.json()
-  return datosJson.results;
-}
+        /**PETICION API */
 
-const final = async () => {
-  const datos = await obtenerDatos()
+const createPokemons = (listPokemons) => {
   let cont = 0;
-  datos.map((pokemon) => {
+  listPokemons.map((pokemon) => {
     cont ++;
     let card = document.createElement('li')
     let div = document.createElement('div')
@@ -26,55 +22,55 @@ const final = async () => {
     card.appendChild(div)
     div.appendChild(imagen)
     div.appendChild(nombre)
-    lista.appendChild(card)
+    $$lista.appendChild(card)
     nombre.setAttribute('class', 'nombre')
     imagen.setAttribute('class', 'imagen-card')
-          
+
               /**EVENTOS  */
 
     let listado = document.createElement('ol')
     div.addEventListener('click' , function(){
       fetch (pokemon.url)
-      .then(datos => datos.json())
-        .then(json => {
-          let valores = json['abilities'];
-          valores.map((valor) => {
-            div.innerHTML = ''
-            let nombreHabilidad = valor['ability'].name.toUpperCase();
-            let habilidades = document.createElement('li')
-            let titulo = document.createElement('h2');
-            titulo.innerText = 'ABILITIES'
-            div.append(titulo)
-
-            listado.append(habilidades)
-            habilidades.append(nombreHabilidad)
-            div.append(listado)
-          })
-        }).catch(error => {
-          console.log(error)
-        })
+        .then(datos => datos.json())
+          .then(json => {
+            let valores = json['abilities'];
+            valores.map((valor) => {
+              div.innerHTML = ''
+              let nombreHabilidad = valor['ability'].name.toUpperCase();
+              let habilidades = document.createElement('li')
+              let titulo = document.createElement('h2');
+              titulo.innerText = 'ABILITIES'
+              div.append(titulo)
+              listado.append(habilidades)
+              habilidades.append(nombreHabilidad)
+              div.append(listado)
+            })
+            }).catch(error => {
+              console.log(error)
+            })
     })
+          /** FINAL EVENTS */ 
+          
+  })  /**map */
+  
+}  /**funcion final */
+
+  fetch(url)
+  .then(datos => datos.json())
+  .then(myJson => {
+    pokemons = myJson.results;
+    createPokemons(pokemons)
   })
+  .catch(error => {
+    console.log(error)
+  })
+
+const filter = () => {
+  let valor = $$input.value.toLowerCase()
+  const filtrados = pokemons.filter(pokemon => pokemon.name.includes(valor))
+  console.log(filtrados)
+  $$lista.innerHTML = ''
+  createPokemons(filtrados)
 }
 
-
-  // const pulsor = () => {
-  //   console.log('si')
-  // }
-  // divCard.addEventListener('click' , pulsor)
-
-// const filtrar = async () => {
-//   const datos = await obtenerDatos()
-//   let valor = input.value.toLowerCase()
-//   const encontrado = datos.filter(pokemon => pokemon.name.toLowerCase().includes(valor))
-//     console.log(encontrado)
-//     let pantallaNueva = document.createElement('div')
-//     pantallaNueva.innerText('HOLA')
-//     // pantallaNueva.innerHTML=encontrado;
-//     card.append(pantallaNueva)
-// }
-
-// input.addEventListener('input', filtrar);
-
-
-final()
+$$input.addEventListener('input', filter)
