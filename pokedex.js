@@ -11,19 +11,22 @@ const createPokemons = (listPokemons) => {
   listPokemons.map((pokemon) => {
     cont ++;
     let card = document.createElement('li')
+    let divContainer = document.createElement('div')
     let div = document.createElement('div')
-    div.setAttribute('class', 'divCard',)
+    divContainer.setAttribute('class', 'divContainer')
+    div.setAttribute('class', 'divCard')
     div.setAttribute('id', `${cont}`)
-    let nombre = document.createElement('h3')
-    nombre.innerText = pokemon.name.toUpperCase();
+    let nombrePokemon = document.createElement('h3')
+    nombrePokemon.innerText = pokemon.name.toUpperCase();
     let imagen = document.createElement('img')
     const prueba = pokemon.url.split('/')
     imagen.src = image_url + prueba[6] + '.png'
-    card.appendChild(div)
+    card.appendChild(divContainer)
+    divContainer.appendChild(div)
     div.appendChild(imagen)
-    div.appendChild(nombre)
+    div.appendChild(nombrePokemon)
     $$lista.appendChild(card)
-    nombre.setAttribute('class', 'nombre')
+    nombrePokemon.setAttribute('class', 'nombre')
     imagen.setAttribute('class', 'imagen-card')
 
               /**EVENTOS  */
@@ -35,10 +38,16 @@ const createPokemons = (listPokemons) => {
         .then(json => {
           let valores = json['abilities'];
           valores.map((valor) => {
-            div.innerHTML =''
+            div.innerHTML = ' '
+            div.append(nombrePokemon)
+            div.setAttribute('class', 'new')
             let nombreHabilidad = valor['ability'].name.toUpperCase();
             let habilidades = document.createElement('li')
-            let titulo = document.createElement('h3');
+            habilidades.setAttribute('class', 'titulo-new')
+            let titulo = document.createElement('h4');
+            listado.setAttribute('class', 'listaNew')
+            titulo.setAttribute('class', 'titulo-new')
+            nombrePokemon.setAttribute('class', 'pokemon')
             titulo.innerText = 'ABILITIES'
             div.append(titulo)
             listado.append(habilidades)

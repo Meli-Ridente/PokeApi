@@ -31,7 +31,7 @@ li{
 
 #pokedex{
   display: inline-grid;
-  grid-template-columns: repeat(6, 10fr);
+  grid-template-columns: repeat(5, 10fr);
 }
 
 .nombre{
@@ -40,21 +40,51 @@ li{
 }
 
 .divCard{
+  margin-top: 10px;
   background-image: url('assets/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
   background-size: 19em;
+  border-radius: 10px;
+  height: 150px;
+  width: 150px;
+  display: block;
+}
+
+.divContainer{
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 15px;
   margin: 30px 0px;
   border: 2px solid rgb(0, 0, 0);
   width: 170px;
-  height: 130px;
+  height: 200px;
 }
 
-
 .imagen-card{
-  height: 140px;
+  height: 160px;
   width: 160px;
   padding: 0px;
+}
+
+.listaNew{
+  padding: 0px;
+}
+
+.new{
+  background-color: rgb(117, 100, 44);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+  height: 200px;
+  margin: unset;
+  color: black;
+}
+
+.titulo-new{
+  color: wheat;
+}
+
+.pokemon{
+  color: black;
 }
