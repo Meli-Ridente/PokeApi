@@ -1,17 +1,17 @@
 body {
-  background-image: url('https://p4.wallpaperbetter.com/wallpaper/450/421/97/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
-  background-size: 100%;
+  margin: 0;
   font-family: rubik;
+  font-size: 1,7em;
+  background-image: url('assets/ws_Red_star_1600x1200.png');
 }
 
 .container{
-  margin-top: 60px;
-  color: hsla(0, 0%, 100%, 0.568);
+  display: grid;
 }
 
 li{
+  color: white;
   list-style: none;
-  padding: 10px;
 }
 
 .titulo{
@@ -30,22 +30,31 @@ li{
 }
 
 #pokedex{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: inline-grid;
+  grid-template-columns: repeat(6, 10fr);
+}
+
+.nombre{
+  margin: unset;
+  color: rgb(24, 2, 2);
 }
 
 .divCard{
+  background-image: url('assets/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
+  background-size: 19em;
   display: flex;
-  background-color: rgba(10, 8, 4, 0.616);
-  border-radius: 30px;
-  height: 200px;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  border-radius: 15px;
+  margin: 30px 0px;
+  border: 2px solid rgb(0, 0, 0);
+  width: 170px;
+  height: 130px;
 }
 
+
 .imagen-card{
-  height: 180px;
-  width: 200px;
+  height: 140px;
+  width: 160px;
   padding: 0px;
 }

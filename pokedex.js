@@ -32,29 +32,28 @@ const createPokemons = (listPokemons) => {
     div.addEventListener('click' , function(){
       fetch (pokemon.url)
         .then(datos => datos.json())
-          .then(json => {
-            let valores = json['abilities'];
-            console.log(div.innerHTML)
+        .then(json => {
+          let valores = json['abilities'];
+          valores.map((valor) => {
             div.innerHTML =''
-            valores.map((valor) => {
-              let nombreHabilidad = valor['ability'].name.toUpperCase();
-              let habilidades = document.createElement('li')
-              let titulo = document.createElement('h2');
-              titulo.innerText = 'ABILITIES'
-              div.append(titulo)
-              listado.append(habilidades)
-              habilidades.append(nombreHabilidad)
-              div.append(listado)
-            })
-            }).catch(error => {
-              console.log(error)
-            })
+            let nombreHabilidad = valor['ability'].name.toUpperCase();
+            let habilidades = document.createElement('li')
+            let titulo = document.createElement('h3');
+            titulo.innerText = 'ABILITIES'
+            div.append(titulo)
+            listado.append(habilidades)
+            habilidades.append(nombreHabilidad)
+            div.append(listado)
+          })
+          }).catch(error => {
+            console.log(error)
+          })
     })
           /** FINAL EVENTS */ 
           
-  })  /**map */
+  })          /**map */
   
-}  /**funcion final */
+}         /**funcion final */
 
   fetch(url)
   .then(datos => datos.json())
@@ -66,12 +65,15 @@ const createPokemons = (listPokemons) => {
     console.log(error)
   })
 
+        /** FILTER */
+
 const filter = () => {
   let valor = $$input.value.toLowerCase()
   const filtrados = pokemons.filter(pokemon => pokemon.name.includes(valor))
-  console.log(filtrados)
   $$lista.innerHTML = ''
   createPokemons(filtrados)
 }
 
 $$input.addEventListener('input', filter)
+
+
