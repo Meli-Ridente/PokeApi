@@ -1,17 +1,13 @@
 body {
-  margin: 0;
+  margin-top: 30px;
   font-family: rubik;
   font-size: 1,7em;
   background-image: url('assets/ws_Red_star_1600x1200.png');
-}
-
-.container{
-  display: grid;
-}
-
-li{
-  color: white;
-  list-style: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 1800px;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .titulo{
@@ -21,70 +17,103 @@ li{
   flex-direction: column;
 }
 
-#buscador{
-  display: inline-block;
-  margin-top:20px;
-  border-radius: 15px;
-  height: 20px;
-  width: 200px;
+.favorites{
+  background-image: url(https://us.123rf.com/450wm/alkestida/alkestida1111/alkestida111100059/11471797-vector-vintage-grunge-de-fondo-papel-viejo-.jpg?ver=6);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 12px;
+  width: 100px;
+  box-shadow: 7px 7px 15px #262626;
+  text-transform: capitalize;
+  text-decoration: dashed;
 }
+
+.container{
+  display: grid;
+}
+
+.lista{
+  /* list-style: none; */
+  color:rgb(104, 93, 93); 
+}
+
+li{ 
+  color:rgb(104, 93, 93); 
+} 
+
+
+#buscador{
+  margin-top:20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 300px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  color: #000;
+}
+
 
 #pokedex{
   display: inline-grid;
-  grid-template-columns: repeat(5, 10fr);
+  grid-template-columns: repeat(6, 10fr);
 }
 
-.nombre{
-  margin: unset;
-  color: rgb(24, 2, 2);
+.nombre{  
+  display: inline;
+  color: #1b1b1b;
+  font-family: monospace; 
 }
 
-.divCard{
-  margin-top: 10px;
-  background-image: url('assets/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
-  background-size: 19em;
-  border-radius: 10px;
-  height: 150px;
-  width: 150px;
-  display: block;
+.divHeart{
+  margin: 5px 10px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart .heartFavorites{
+  margin: 10px;
 }
 
 .divContainer{
-  background-color: rgb(255, 255, 255);
+  background-image: url('https://us.123rf.com/450wm/alkestida/alkestida1111/alkestida111100059/11471797-vector-vintage-grunge-de-fondo-papel-viejo-.jpg?ver=6');
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 30px 0px;
-  border: 2px solid rgb(0, 0, 0);
-  width: 170px;
-  height: 200px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 7px 7px 15px #262626;
+}
+
+.divCard{
+  margin: 5px;
+  background-image: url('https://i.pinimg.com/736x/a8/34/af/a834afbaa0de63124cf577735444c29c--pixel-art.jpg');
+  background-size: cover;
+  box-shadow: 5px 5px 10px #262626;
+  border-radius: 10px;
+  height: 155px;
+  width: 210px;
 }
 
 .imagen-card{
-  height: 160px;
-  width: 160px;
-  padding: 0px;
+  margin-left: 0px;
+  height: 150px;
+  width: 200px;
 }
+
+.divAbilities{
+  margin: 60px 0px 10px 0px;
+  display: flex;
+  align-items: baseline;
+  color: rgb(48, 15, 15);
+} 
 
 .listaNew{
-  padding: 0px;
-}
-
-.new{
-  background-color: rgb(117, 100, 44);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 170px;
-  height: 200px;
-  margin: unset;
-  color: black;
-}
-
-.titulo-new{
-  color: wheat;
-}
-
-.pokemon{
-  color: black;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 13px;
 }
