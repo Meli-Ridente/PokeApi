@@ -1,4 +1,4 @@
-let $$lista = document.querySelector('ol')
+let $$lista = document.querySelector('ol#pokedex')
 const url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
 const image_url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 const $$input = document.querySelector('#buscador')
@@ -38,26 +38,34 @@ const createPokemons = (listPokemons) => {
     divContainer.appendChild(divHeart)
     divContainer.appendChild(div)
     div.appendChild(imagen)
+    let divLine = document.createElement('div')
+    divLine.setAttribute('class', 'line')
+    divLine.innerHTML = ' ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○  '
+    divContainer.append(divLine)
     $$lista.appendChild(card)
     nombrePokemon.setAttribute('class', 'nombre')
     imagen.setAttribute('class', 'imagen-card')
 
-              /**EVENTS  */
-    let listaFav = document.createElement('ol');
-    heart.addEventListener('click', function(){
-      let liFav = document.createElement('li')
-      favorites.push(pokemon.name)
-      // favorites.innerText = favorites;
-      listaFav.append(favorites)
-      liFav.append
-      heart.style.display= 'none'
-      heartFavorites.style.display = 'inline'
-      divHeart.append(heartFavorites)
-      divFavorites.append(listaFav)
-      console.log(favorites)
+          /** HEART EVENTS */
+
+    let listFav = document.querySelector('.listFav')
+    let liFav = document.createElement('li')
+    heartFavorites.addEventListener('click', function(){
+      heartFavorites.style.visibility = 'hidden'
+      heart.style.visibility = 'visible'
+      liFav.innerHTML=''
+      divHeart.append(heart)
     })
-    
-              /** FINAL EVENTS */ 
+    heart.addEventListener('click', function(){
+        
+        liFav.innerHTML = pokemon.name;
+        listFav.append(liFav)
+        heart.style.visibility = 'hidden'
+        heartFavorites.style.visibility = 'visible'
+        divHeart.append(heartFavorites)
+    })
+
+
 
     let listado = document.createElement('ul')
     listado.setAttribute('class', 'listaNew')
@@ -67,9 +75,9 @@ const createPokemons = (listPokemons) => {
           let divAbilities = document.createElement('div')
           divAbilities.setAttribute('class', 'divAbilities')
           let valores = json['abilities'];
-          let abilitiesTitle = document.createElement('h4')
+          let abilitiesTitle = document.createElement('h5')
           abilitiesTitle.setAttribute('class', 'abilitiesTitle')
-          abilitiesTitle.innerText = 'ABILITIES'
+          abilitiesTitle.innerText = ' ◉ ABILITIES'
           divAbilities.append(abilitiesTitle)
           valores.map((valor) => {
             let nombreHabilidad = valor['ability'].name;
@@ -82,11 +90,9 @@ const createPokemons = (listPokemons) => {
           }).catch(error => {
             console.log(error)
           })
-          
-          
   })          /**map */
-  
 }         /**funcion final */
+
 
   fetch(url)
   .then(datos => datos.json())
@@ -108,5 +114,3 @@ const filter = () => {
 }
 
 $$input.addEventListener('input', filter)
-
-
