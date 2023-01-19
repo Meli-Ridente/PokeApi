@@ -1,21 +1,132 @@
 body {
-  background-image: url('https://p4.wallpaperbetter.com/wallpaper/450/421/97/pokemon-video-games-pixels-pixel-art-wallpaper-preview.jpg');
+  margin-top: 30px;
+  font-family: rubik;
+  font-size: 1,7em;
+  background-image: url('https://www.gratistodo.com/wp-content/uploads/2022/02/Fondos-de-pantalla-Verde-16.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 1800px;
+  background-attachment: fixed;
   background-size: cover;
 }
 
-.container{
+.titulo{
+  margin-top: 100px;
+  justify-content: center;
   display: flex;
-}
-
-.titulo {
   align-items: center;
-  width: 500px;
   flex-direction: column;
 }
 
+.line{
+  border-bottom: 3px solid rgb(136, 36, 36);
+  margin: 30px 0px 0px 20px;
+  width: 80%;
+
+}
+
+.favorites{
+  background-image: url('https://us.123rf.com/450wm/alkestida/alkestida1111/alkestida111100059/11471797-vector-vintage-grunge-de-fondo-papel-viejo-.jpg?ver=6');
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 12px;
+  width: 100px;
+  box-shadow: 7px 7px 15px #262626;
+  text-transform: capitalize;
+  text-decoration: dashed;
+}
+
+.container{
+  display: grid;
+}
+
+.lista , .listFav{
+  list-style: none;
+  color:rgb(104, 93, 93); 
+}
+
+li{ 
+  color:rgb(104, 93, 93); 
+} 
+
+
 #buscador{
   margin-top:20px;
-  border-radius: 15px;
-  height: 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 300px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+#pokedex{
+  display: inline-grid;
+  grid-template-columns: repeat(5, 10fr);
+}
+
+.nombre{  
+  display: inline;
+  color: #1b1b1b;
+  font-family: monospace; 
+}
+
+.divHeart{
+  margin: 5px 10px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart .heartFavorites{
+  margin: 10px;
+}
+
+.divContainer{
+  background-image: url('https://us.123rf.com/450wm/alkestida/alkestida1111/alkestida111100059/11471797-vector-vintage-grunge-de-fondo-papel-viejo-.jpg?ver=6');
+  background-repeat: no-repeat;
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 7px 7px 15px #262626;
+}
+
+.divContainer:hover{
+  transform: translateY(-15px);
+}
+
+.divCard{
+  margin: 5px;
+  background-image: url('https://i.pinimg.com/736x/a8/34/af/a834afbaa0de63124cf577735444c29c--pixel-art.jpg');
+  background-size: cover;
+  box-shadow: 5px 5px 10px #262626;
+  border-radius: 10px;
+  height: 155px;
+  width: 210px;
+}
+
+.imagen-card{
+  margin-left: 0px;
+  height: 150px;
   width: 200px;
+}
+
+.divAbilities{
+  margin: 5px 0px 5px 0px;
+  display: flex;
+  align-items: baseline;
+  color: rgb(48, 15, 15);
+} 
+
+.listaNew{
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 13px;
 }
