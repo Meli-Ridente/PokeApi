@@ -5,8 +5,8 @@ const $$input = document.querySelector('#buscador')
 let pokemons = []
 let divFavorites = document.querySelector('.favorites')
 let favorites = []
-
-/**MAP POKEMONS */
+  
+    /**MAP POKEMONS */
 
 const createPokemons = (listPokemons) => {
   let cont = 0;
