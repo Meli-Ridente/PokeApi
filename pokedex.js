@@ -26,7 +26,8 @@ const createPokemons = (listPokemons) => {
     let imagen = document.createElement('img')
     const prueba = pokemon.url.split('/')
     imagen.src = image_url + prueba[6] + '.png'
-
+    nombrePokemon.setAttribute('class', 'nombre')
+    imagen.setAttribute('class', 'imagen-card')
 
     card.appendChild(divContainer)
     let heart = document.createElement('span')
@@ -44,16 +45,14 @@ const createPokemons = (listPokemons) => {
     divHeart.appendChild(heart)
     divContainer.appendChild(divHeart)
     divContainer.appendChild(div)
-
-
     div.appendChild(imagen)
+
+
     let divLine = document.createElement('div')
     divLine.setAttribute('class', 'line')
     divLine.innerHTML = ' ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○  '
     divContainer.append(divLine)
     $$lista.appendChild(card)
-    nombrePokemon.setAttribute('class', 'nombre')
-    imagen.setAttribute('class', 'imagen-card')
 
 
     /** HEART EVENTS */
