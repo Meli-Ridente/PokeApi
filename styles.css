@@ -139,8 +139,11 @@ li{
 /* MEDIA QUERIES */
 
 @media (max-width: 600px){
+  .body{
+    background-size: contain;
+  }
   #img-titulo{
-    width: 400px;
+    width: 350px;
   }
 }
 
